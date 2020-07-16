@@ -14,7 +14,10 @@ void main() {
 
 	gens_back = gens_back - 1;
 
-	if (gens_back % 10 == 1) {
+	if (gens_back / 10 == 1) {
+		ordinal = "th";
+	}
+	else if (gens_back % 10 == 1) {
 		ordinal = "st";
 	}
 	else if (gens_back % 10 == 2) {
@@ -27,7 +30,7 @@ void main() {
 		ordinal = "th";
 	}
 
-	string plural = (gens_separated == 1) ? "s" : "";
+	string plural = (gens_separated == 1) ? "" : "s";
 
 	if (gens_separated == 0) {
 		cout << "Your cousin is your " << gens_back << ordinal << " cousin.";
